@@ -1137,14 +1137,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814927175}
     m_Modifications:
+    - target: {fileID: 2062849086027459398, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4988690128917496556, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 7429986411875204259, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c3e14c330961f5243a9399cf75760788, type: 2}
     - target: {fileID: 8363888009643339920, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.23
@@ -1720,6 +1724,10 @@ PrefabInstance:
     - target: {fileID: 8605984519231311592, guid: 5297d6cc8fcb6d24c916fc5f49e169f4, type: 3}
       propertyPath: m_Name
       value: Brick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605984519231311592, guid: 5297d6cc8fcb6d24c916fc5f49e169f4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

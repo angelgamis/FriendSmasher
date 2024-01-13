@@ -5,8 +5,9 @@ public class BallMovement : MonoBehaviour
     private Vector3 ballPosition;
 	private Rigidbody2D rigid;
 	// Give a random X force downwards
-	private float xForce;
-	private Vector2 force;
+	private float force = 3f;
+	private float xVelocity;
+	private Vector2 velocity;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,8 @@ public class BallMovement : MonoBehaviour
 			rigid = GetComponent<Rigidbody2D>();
 		}
 
-		xForce = Random.Range(-0.5f, 0.5f);
-		force = new Vector2(xForce, 1f);
+		xVelocity = Random.Range(-0.5f, 0.5f);
+		velocity = new Vector2(xVelocity, force);
 		ballPosition = transform.position;
     }
 
@@ -26,13 +27,12 @@ public class BallMovement : MonoBehaviour
     {
 		if(rigid != null)
 		{
-			rigid.AddForce(force);
-
+			rigid.AddForce(velocity);
 		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		force *= -1;
+		velocity *= -1;
 	}
 }
