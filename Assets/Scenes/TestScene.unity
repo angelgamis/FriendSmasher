@@ -1143,18 +1143,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814927175}
     m_Modifications:
-    - target: {fileID: 2062849086027459398, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4988690128917496556, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 7429986411875204259, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: c3e14c330961f5243a9399cf75760788, type: 2}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8363888009643339920, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.23
@@ -1442,13 +1438,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 494059820243193576, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 801772427651300484, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 3349895889362325063, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 4323721002643448665, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
       propertyPath: m_Name
       value: === Walls ===
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927900375121834076, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     - target: {fileID: 6862790874726843571, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
       propertyPath: m_SortingOrder
@@ -1461,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 7571833862743022569, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
       propertyPath: m_SortingOrder
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755768611194589171, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
+      propertyPath: m_TagString
+      value: Walls
       objectReference: {fileID: 0}
     - target: {fileID: 9050630607487608590, guid: e3aaa4ab9f05867498f123175ee4e9d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1585,7 +1597,7 @@ PrefabInstance:
       value: demoPlayer
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 2132996815550372544, guid: 1427c87f47123a64c8e6851651639c94, type: 3}
+    - {fileID: 7855115922348213462, guid: 1427c87f47123a64c8e6851651639c94, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

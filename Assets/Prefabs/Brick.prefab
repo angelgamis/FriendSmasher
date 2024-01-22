@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5116781064251047725}
   - component: {fileID: 2560092369026293924}
   - component: {fileID: 5547553713935260048}
+  - component: {fileID: 8016810912652495741}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -366,3 +367,15 @@ PolygonCollider2D:
       - {x: -3.735, y: -0.49499997}
       - {x: -3.725, y: -0.505}
   m_UseDelaunayMesh: 0
+--- !u!114 &8016810912652495741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605984519231311592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c3b2c89335ce640a269d26a055479c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

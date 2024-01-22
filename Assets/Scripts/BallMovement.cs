@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    private Vector3 ballPosition;
-	private Rigidbody2D rigid;
-	// Give a random X force downwards
-	private float force = 3f;
-	private float xVelocity;
-	private Vector2 velocity;
+	[Header("Ball Properties")]
+	public Rigidbody2D rigid;
+	[SerializeField] private Vector2 force;
+	[SerializeField] private float speed = 400f;
+	[SerializeField] private float friction = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,22 +16,27 @@ public class BallMovement : MonoBehaviour
 			rigid = GetComponent<Rigidbody2D>();
 		}
 
-		xVelocity = Random.Range(-0.5f, 0.5f);
-		velocity = new Vector2(xVelocity, force);
-		ballPosition = transform.position;
+		// When game starts delay a ball drop
+		Invoke("StartRandomBallDrop", 2f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-		if(rigid != null)
-		{
-			rigid.AddForce(velocity);
-		}
+	private void StartRandomBallDrop()
+	{
+		force = Vector2.zero;
+		force.x = Random.Range(-0.5f, 0.5f);
+		force.y = -1;
+
+		this.rigid.AddForce(force.normalized * speed);
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		velocity *= -1;
+
 	}
 }
