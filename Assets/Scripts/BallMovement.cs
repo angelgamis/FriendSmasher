@@ -6,7 +6,6 @@ public class BallMovement : MonoBehaviour
 	public Rigidbody2D rigid;
 	[SerializeField] private Vector2 force;
 	[SerializeField] private float speed = 400f;
-	[SerializeField] private float friction = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,7 @@ public class BallMovement : MonoBehaviour
 		}
 
 		// When game starts delay a ball drop
-		Invoke("StartRandomBallDrop", 2f);
+		Invoke("StartRandomBallDrop", 1f);
     }
 
 	private void StartRandomBallDrop()

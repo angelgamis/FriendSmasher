@@ -1003,6 +1003,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8363888009643339920, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
   m_PrefabInstance: {fileID: 1836115376967560378}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &2013141244 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7429986411875204259, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
+  m_PrefabInstance: {fileID: 1836115376967560378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2036793338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1143,6 +1148,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814927175}
     m_Modifications:
+    - target: {fileID: 2062849086027459398, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
+      propertyPath: rigid
+      value: 
+      objectReference: {fileID: 2013141244}
     - target: {fileID: 4988690128917496556, guid: 724d509add9ad7a44b08bf8d09e66266, type: 3}
       propertyPath: m_Name
       value: Ball
