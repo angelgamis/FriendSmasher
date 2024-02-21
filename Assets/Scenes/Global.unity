@@ -170,7 +170,7 @@ MonoBehaviour:
   level: 1
   score: 0
   lives: 3
-  debug_DontStartLevel1: 1
+  debug_DontStartLevel1: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
