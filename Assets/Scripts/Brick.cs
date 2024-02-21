@@ -15,14 +15,7 @@ public class Brick : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        health = states.Length;
         gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 	private void Hit()
