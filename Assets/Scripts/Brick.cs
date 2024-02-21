@@ -6,7 +6,9 @@ public class Brick : MonoBehaviour
     [SerializeField] private float[] states;
     [SerializeField] private Sprite endSprite;
     [SerializeField] private int health;
-    public int Health => health;
+	[SerializeField] private int points = 10;
+	public int Health => health;
+	public int Points => points;
 
 	private void Awake()
 	{
@@ -36,10 +38,17 @@ public class Brick : MonoBehaviour
 		else if(health == 1)
 		{
 			spriteRenderer.sprite = endSprite;
+
+			// Update the scale of the object with new 
+			gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
+		}
+		else
+		{
+			// Update the scale of the object with new 
+			gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
 		}
 
-		// Update the scale of the object with new 
-		gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
+		FindObjectOfType<GameManager>().Hit(this);
 	}
 
 	// When ball collides with brick call Hit function

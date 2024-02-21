@@ -15,27 +15,24 @@ public class BallMovement : MonoBehaviour
 			rigid = GetComponent<Rigidbody2D>();
 		}
 
-		// When game starts delay a ball drop
-		Invoke("StartRandomBallDrop", 1f);
+		ResetBall();
     }
 
 	private void StartRandomBallDrop()
 	{
 		force = Vector2.zero;
 		force.x = Random.Range(-0.5f, 0.5f);
-		force.y = -1;
+		force.y = -0.5f;
 
 		this.rigid.AddForce(force.normalized * speed);
 	}
 
-	// Update is called once per frame
-	void Update()
+	public void ResetBall()
 	{
+		// Zeroing out position and velocity
+		transform.transform.position = Vector2.zero;
+		rigid.velocity = Vector2.zero;
 
-	}
-
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
-
+		Invoke("StartRandomBallDrop", 1.5f);
 	}
 }

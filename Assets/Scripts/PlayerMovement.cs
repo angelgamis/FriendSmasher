@@ -22,9 +22,6 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		//Vector3 inputs = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-		//transform.Translate(inputs * 5 * Time.deltaTime);
-
 		// While the mouse is being held down on player move the player to the mouse
 		if (mouseIsDown)
 		{
@@ -38,12 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
 	private void ConstrainPosition()
 	{
-		//// Constrain X
-		//if (mouseWorldPosition.x <= 2.3f)
-		//{
-		//	mouseWorldPosition.x = -2.3f;
-		//}
-
 		// Constrain Y
 		mouseWorldPosition.y = transform.position.y;
 
@@ -88,5 +79,8 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-
+	public void ResetPlayer()
+	{
+		transform.position = new Vector2(0, transform.position.y);
+	}
 }

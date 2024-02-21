@@ -388,3 +388,4 @@ MonoBehaviour:
   - 0.12
   endSprite: {fileID: 21300000, guid: ab90993adec64db48a3c13013735a72d, type: 3}
   health: 5
+  points: 10
