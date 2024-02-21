@@ -15,7 +15,11 @@ public class Brick : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
+		if (health == 1)
+		{
+			spriteRenderer.sprite = endSprite;
+		}
+		gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
     }
 
 	private void Hit()
