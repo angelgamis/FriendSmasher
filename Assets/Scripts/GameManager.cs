@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 	private BallMovement ball;
 	private PlayerMovement player;
 	private Brick[] bricks;
+	private GameObject heart1;
+	private GameObject heart2;
+	private GameObject heart3;
 
 	[Header("*** Debugs ***")]
 	[SerializeField] private bool debug_DontStartLevel1; 
@@ -53,6 +56,9 @@ public class GameManager : MonoBehaviour
 		ball = FindObjectOfType<BallMovement>();
 		player = FindObjectOfType<PlayerMovement>();
 		bricks = FindObjectsOfType<Brick>();
+		heart1 = GameObject.Find("Heart1");
+		heart2 = GameObject.Find("Heart2");
+		heart3 = GameObject.Find("Heart3");
 	}
 
 	private void ResetLevel()
@@ -80,11 +86,29 @@ public class GameManager : MonoBehaviour
 		return true;
 	}
 
+	private void UpdateHeartUI()
+	{
+		switch (lives)
+		{
+			case 2:
+				heart3.SetActive(false);
+				break;
+			case 1:
+				heart2.SetActive(false);
+				break;
+			case 0:
+				heart1.SetActive(false);
+				break;
+		}
+	}
+
 	public void LooseLife()
 	{
 		--lives;
 
-		if(lives > 0)
+		UpdateHeartUI();
+
+		if (lives > 0)
 		{
 			ResetLevel();
 		}
