@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 	[Header("*** Debugs ***")]
 	[SerializeField] private bool debug_DontStartLevel1; 
 
+	// Don't destroy global scene and game manager, and run LevelLoaded when a scene is loaded.
 	private void Awake()
 	{
 		DontDestroyOnLoad(this.gameObject);
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	// Resets score and lives and loads the starting level scene
 	private void NewGame()
 	{
 		this.score = 0;
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
 		LoadLevel(1);
 	}
 
+	// Loads a level and sets the level number to the one given as a parameter
 	private void LoadLevel(int level)
 	{
 		this.level = level;
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene("Level" + level);
 	}
 
+	// When a new level is loaded, cache all game objects in the scene.
 	private void LevelLoaded(Scene scene, LoadSceneMode mode)
 	{
 		ball = FindObjectOfType<BallMovement>();
@@ -61,18 +65,21 @@ public class GameManager : MonoBehaviour
 		heart3 = GameObject.Find("Heart3");
 	}
 
+	// Reset ball and player when loosing a life
 	private void ResetLevel()
 	{
 		ball.ResetBall();
 		player.ResetPlayer();
 	}
 
+	// Load GameOver scene and run a new game when UI is clicked
 	private void GameOver()
 	{
 		// Load Game Over Scene
 		NewGame();
 	}
 
+	// Return status of board cleared or not cleared in a bool
 	private bool Cleared()
 	{
 		for(int i = 0; i < bricks.Length; i++)
@@ -86,6 +93,7 @@ public class GameManager : MonoBehaviour
 		return true;
 	}
 
+	// When loosing a life check how many hearts player has and update UI for hearts
 	private void UpdateHeartUI()
 	{
 		switch (lives)
@@ -102,6 +110,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	// Decrement lives, call UpdateHeartUI and check if we need to ResetLevel or GameOver
 	public void LooseLife()
 	{
 		--lives;
@@ -118,6 +127,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	// When a brick is hit increase score and check if board is cleared
 	public void Hit(Brick brick)
 	{
 		score += brick.Points;

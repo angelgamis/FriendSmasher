@@ -24,6 +24,7 @@ public class Brick : MonoBehaviour
 		gameObject.transform.localScale = new Vector2(states[health - 1], states[health - 1]);
     }
 
+	// Lower health and scale size. Destroy when health is 0
 	private void Hit()
 	{
 		// Lower health

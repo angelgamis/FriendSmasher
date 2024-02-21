@@ -18,6 +18,7 @@ public class BallMovement : MonoBehaviour
 		ResetBall();
     }
 
+	// Find a random tragectory for ball to drop
 	private void StartRandomBallDrop()
 	{
 		force = Vector2.zero;
@@ -27,6 +28,7 @@ public class BallMovement : MonoBehaviour
 		this.rigid.AddForce(force.normalized * speed);
 	}
 
+	// Reset ball to starting position and velocity, then StartRandomBall drop
 	public void ResetBall()
 	{
 		// Zeroing out position and velocity

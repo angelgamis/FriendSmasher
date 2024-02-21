@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	// Keep the y position of the mouse to the same position
 	private void ConstrainPosition()
 	{
 		// Constrain Y
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 		mouseIsDown = false;
 	}
 
+	// When colliding with ball, make the ball move in a calculated angle
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		BallMovement ball = collision.gameObject.GetComponent<BallMovement>();
@@ -79,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	// Reset player to starting position
 	public void ResetPlayer()
 	{
 		transform.position = new Vector2(0, transform.position.y);
